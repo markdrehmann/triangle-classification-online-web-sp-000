@@ -12,6 +12,10 @@ class Triangle
 
   def kind
     if valid_triangle?
+      case type
+      when @s1 == @s2 == @s3
+        :equilateral
+      end
     else
       raise TriangleError
     end
