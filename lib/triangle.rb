@@ -12,10 +12,13 @@ class Triangle
 
   def kind
     if valid_triangle?
-      case type
-      when @s1 == @s2 && @s2 == @s3
+      if @s1 == @s2 && @s2 == @s3 && @s3 == @s1
         :equilateral
-      end
+      elsif @s1 == @s2 || @s2 == @s3 || @s3 == @s1
+        :isosceles
+      elsif @s1 != @s2 && @s2 != @s3 && @s1 != @s3
+        :scalene
+      end        
     else
       raise TriangleError
     end
