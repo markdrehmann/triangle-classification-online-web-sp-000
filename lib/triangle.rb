@@ -10,6 +10,13 @@ class Triangle
     @s1 > 0 && @s2 > 0 && @s3 > 0 && @s1 + @s2 > @s3 && @s2 + @s3 > @s1 && @s1 + @s3 > @s2
   end
 
+  def kind
+    if valid_triangle?
+    else
+      raise TriangleError
+    end
+  end
+
   class TriangleError <StandardError
   end
 end
